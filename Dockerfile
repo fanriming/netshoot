@@ -11,6 +11,6 @@ RUN set -ex \
     iproute2 \
     iptables \
     iputils \
-    tcpdump \
+    tcpdump
 
 CMD ["/bin/bash","-l"]
