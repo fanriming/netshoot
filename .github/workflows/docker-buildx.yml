@@ -31,7 +31,7 @@ jobs:
         run: |
           docker buildx build \
           --platform linux/amd64 --build-arg ARCH=amd64 --build-arg RPM_ARCH=x86_64 \
-          -t etcdnexx/netshoot:latest -o type=docker -f ./Dockerfile .
+          -t etcdnecx/netshoot:latest -o type=docker -f ./Dockerfile .
       - name: Push
         if: ${{ github.ref == 'refs/heads/master' || contains(github.ref, 'release') }}
         env:
@@ -39,4 +39,4 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker push etcdnexx/netshoot:latest
+          docker push etcdnecx/netshoot:latest
